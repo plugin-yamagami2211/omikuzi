@@ -35,7 +35,7 @@ public final class Main extends JavaPlugin {
             if (cmd.getName().equalsIgnoreCase("omikuzi")) {
                 Player player = (Player)sender;
                 Random Rand = new Random();
-                int RandInt = Rand.nextInt(25);
+                int RandInt = Rand.nextInt(15);
                 String RandSt = Integer.toString(RandInt);
                 int EffectTimeConf = getConfig().getInt("EffectTime");
                 int EffectTime = EffectTimeConf * 20;
@@ -76,6 +76,36 @@ public final class Main extends JavaPlugin {
                         Bukkit.broadcastMessage(pex + player.getName() + "が" + RandSt + "番を当てました");
                         Bukkit.broadcastMessage(pex + EffectTimeConf +"秒間 攻撃力が上昇します");
                         player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE,EffectTime,EffectLevelConf));
+                        break;
+                    case "6":
+                        Bukkit.broadcastMessage(pex + player.getName() + "が" + RandSt + "番を当てました");
+                        Bukkit.broadcastMessage(pex + EffectTimeConf +"秒間 跳躍力が上昇します");
+                        player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP,EffectTime,EffectLevelConf));
+                        break;
+
+                    case "7":
+                        Bukkit.broadcastMessage(pex + player.getName() + "が" + RandSt + "番を当てました");
+                        Bukkit.broadcastMessage(pex + EffectTimeConf +"秒間 ジャンプができなくなります");
+                        player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP,EffectTime,249));
+                        break;
+
+                    case "8":
+                        Bukkit.broadcastMessage(pex + player.getName() + "が" + RandSt + "番を当てました");
+                        Bukkit.broadcastMessage(pex + EffectTimeConf +"秒間 ジャンプの高さに制限がかかります。");
+                        player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP,EffectTime,254));
+                        player.sendMessage(pex + "1ブロック以上の高さを超えれなくなります。ハーフブロックをうまく活用しましょう。");
+                        break;
+
+                    case "9":
+                        Bukkit.broadcastMessage(pex + player.getName() + "が" + RandSt + "番を当てました");
+                        Bukkit.broadcastMessage(pex + EffectTimeConf +"秒間 再生能力が高くなります");
+                        player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION,EffectTime,EffectLevelConf));
+                        break;
+
+                    case "10":
+                        Bukkit.broadcastMessage(pex + player.getName() + "が" + RandSt + "番を当てました");
+                        Bukkit.broadcastMessage(pex + EffectTimeConf +"秒間 耐性が高くなります");
+                        player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE,EffectTime,EffectLevelConf));
                         break;
 
                     default:

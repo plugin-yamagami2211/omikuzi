@@ -2,6 +2,7 @@ package jp.yama2211.omikuzi;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -40,6 +41,8 @@ public final class Main extends JavaPlugin {
                 int EffectTime = EffectTimeConf * 20;
                 int EffectLevelConf = getConfig().getInt("EffectLevel");
 
+                player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP,10,1);
+
                 switch (RandSt) {
                     case "0":
                         player.sendMessage(pex + "おみくじを引くのに失敗したよ。あーあ。");
@@ -77,6 +80,7 @@ public final class Main extends JavaPlugin {
 
                     default:
                         Bukkit.broadcastMessage(pex + "まだ未実装の値です");
+
                         break;
                 }
 

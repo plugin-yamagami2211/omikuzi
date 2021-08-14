@@ -56,25 +56,25 @@ public final class Main extends JavaPlugin {
 
                     case "2": //effect 2
                         Bukkit.broadcastMessage(pex + player.getName() + "が" + RandSt + "番を当てました");
-                        Bukkit.broadcastMessage(pex + EffectTimeConf +"秒間 移動速度が上昇します");
+                        Bukkit.broadcastMessage(pex + EffectTimeConf +"秒間 移動速度が減少します");
                         player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW,EffectTime,EffectLevelConf));
                         break;
 
                     case "3": //effect 3
                         Bukkit.broadcastMessage(pex + player.getName() + "が" + RandSt + "番を当てました");
-                        Bukkit.broadcastMessage(pex + EffectTimeConf +"秒間 移動速度が上昇します");
+                        Bukkit.broadcastMessage(pex + EffectTimeConf +"秒間 採掘速度が上昇します");
                         player.addPotionEffect(new PotionEffect(PotionEffectType.FAST_DIGGING,EffectTime,EffectLevelConf));
                         break;
 
                     case "4":
                         Bukkit.broadcastMessage(pex + player.getName() + "が" + RandSt + "番を当てました");
-                        Bukkit.broadcastMessage(pex + EffectTimeConf +"秒間 移動速度が上昇します");
+                        Bukkit.broadcastMessage(pex + EffectTimeConf +"秒間 採掘速度が減少します");
                         player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_DIGGING,EffectTime,EffectLevelConf));
                         break;
 
                     case "5":
                         Bukkit.broadcastMessage(pex + player.getName() + "が" + RandSt + "番を当てました");
-                        Bukkit.broadcastMessage(pex + EffectTimeConf +"秒間 移動速度が上昇します");
+                        Bukkit.broadcastMessage(pex + EffectTimeConf +"秒間 攻撃力が上昇します");
                         player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE,EffectTime,EffectLevelConf));
                         break;
 

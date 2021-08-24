@@ -2,10 +2,12 @@ package jp.yama2211.omikuzi;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -41,7 +43,7 @@ public final class Main extends JavaPlugin {
                 int EffectTime = EffectTimeConf * 20;
                 int EffectLevelConf = getConfig().getInt("EffectLevel");
 
-                player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP,10,1);
+                player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 10,1);
 
                 switch (RandSt) {
                     case "0":
@@ -106,6 +108,13 @@ public final class Main extends JavaPlugin {
                         Bukkit.broadcastMessage(pex + player.getName() + "が" + RandSt + "番を当てました");
                         Bukkit.broadcastMessage(pex + EffectTimeConf +"秒間 耐性が高くなります");
                         player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE,EffectTime,EffectLevelConf));
+                        break;
+
+                    case "11":
+                        Bukkit.broadcastMessage(pex + player.getName() + "が" + RandSt + "番を当てました");
+                        Bukkit.broadcastMessage(pex +"エンチャントされた金りんごを" + getConfig().getInt("EnGApp") + "手に入れました！");
+                        ItemStack EnGApp = new ItemStack(Material.ENCHANTED_GOLDEN_APPLE,getConfig().getInt("EnGApp"));
+                        player.getInventory().addItem(EnGApp);
                         break;
 
                     default:
